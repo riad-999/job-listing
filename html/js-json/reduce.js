@@ -1,5 +1,5 @@
 let json_array= 0;
-fetch("data.json").then(function(response)
+fetch("https://joblisting99.netlify.app/html/data.json").then(function(response)
 {
     return response.json();
 }).then(function(data)
