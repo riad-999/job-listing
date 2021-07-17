@@ -9,7 +9,7 @@ fetch("data.json").then(function(response)
 {
     console.log(error.message);
 });
-console.log(json_object);
+console.log(array_object);
 
 //fucntion description:
 //for example if the 1st user object of the array (the json array)
