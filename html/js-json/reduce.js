@@ -1,4 +1,4 @@
-const json_object;
+let json_object;
 fetch("data.json").then(function(response)
 {
     return response.json();
