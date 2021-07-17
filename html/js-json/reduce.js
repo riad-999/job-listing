@@ -1,11 +1,11 @@
-var json_array;
+let json_array;
 fetch("js-json/data.json").then(function(response)
 {
     return response.json();
 }).then(function(data)
 {
     console.log(data);
-    json_array= data;
+    Object.assign(json_array,data);
 }).catch(function(error)
 {
     console.log(error.message);
