@@ -30,7 +30,7 @@ header
 {
     height: 200px;
     background-image: 
-    url("../html/images/bg-header-mobile.svg");
+    url("../images/bg-header-mobile.svg");
     background-color: var(--light-green);
     background-repeat: no-repeat;
     background-size: 100% 100%;
