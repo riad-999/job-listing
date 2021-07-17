@@ -1,15 +1,15 @@
-let json_object;
+const json_object =
 fetch("data.json").then(function(response)
 {
     return response.json();
 }).then(function(data)
 {
-    json_object = data;
+    return data;
 }).catch(function(error)
 {
     console.log(error.message);
 });
-
+console.log(json_object);
 
 //fucntion description:
 //for example if the 1st user object of the array (the json array)

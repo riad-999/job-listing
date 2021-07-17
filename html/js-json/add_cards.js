@@ -73,7 +73,7 @@ function creat_card_content(company_object)
         ${creat_skills(company_object)}
     </div>`;
 }
-json_object.farEach(function(object)
+json_object.forEach(function(object)
 {
     const card_content = creat_card_content(object);
     const card = document.createElement("div");
