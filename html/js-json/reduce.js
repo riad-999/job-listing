@@ -1,4 +1,4 @@
-let json_array= 0;
+var json_array;
 fetch("js-json/data.json").then(function(response)
 {
     return response.json();
