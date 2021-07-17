@@ -1,10 +1,10 @@
-let json_object =
+let json_array= 0;
 fetch("data.json").then(function(response)
 {
     return response.json();
 }).then(function(data)
 {
-    json_object = data;
+    json_array= data;
 }).catch(function(error)
 {
     console.log(error.message);

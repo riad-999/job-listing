@@ -73,7 +73,7 @@ function creat_card_content(company_object)
         ${creat_skills(company_object)}
     </div>`;
 }
-json_array.forEach(function(object)
+json_array.farEach(function(object)
 {
     const card_content = creat_card_content(object);
     const card = document.createElement("div");
@@ -81,3 +81,5 @@ json_array.forEach(function(object)
     card.innerHTML = card_content;
     cards_container.append(card);
 });
+
+
