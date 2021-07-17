@@ -4,6 +4,7 @@ fetch("data.json").then(function(response)
     return response.json();
 }).then(function(data)
 {
+    console.log(data);
     json_array= data;
 }).catch(function(error)
 {
@@ -21,7 +22,7 @@ console.log(json_array);
 function set_all_types(property_name,typeof_property)
 {
     
-    return json_object.reduce(function(object,acc)
+    return json_array.reduce(function(object,acc)
     {
         let array = object[property_name];
         //converting string to array in such case
