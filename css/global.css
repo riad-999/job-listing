@@ -1,0 +1,41 @@
+*,*::after,*::before
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root
+{
+    --skill-bg:hsl(180, 52%, 74%);
+    --light-green: hsl(180, 29%, 50%);
+    --bg: hsl(180, 52%, 96%);
+    --Filter-Tablets: hsl(180, 31%, 95%);
+    --txt: hsl(180, 8%, 52%);
+    --dark-green: hsl(180, 14%, 20%);
+    --card-bg:white;
+    --thin:500;
+    --thick:700;
+    --card-box-sizing:0 0 8px 0 rgba(0,0,0,.5);
+
+    font-size:15px;
+}
+body
+{
+    background-color: var(--bg);
+    font-weight: var(--thin);
+    font-family: 'Spartan', sans-serif;
+    color:var(--txt);
+}
+header
+{
+    height: 200px;
+    background-image: 
+    url("images/bg-header-mobile.svg");
+    background-color: var(--light-green);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+input 
+{
+    outline:none;
+}
