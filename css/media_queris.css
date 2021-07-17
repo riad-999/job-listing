@@ -1,0 +1,29 @@
+@media screen and (min-width:100px)
+{
+    header
+    {
+        background-image: 
+        url("../html/images/bg-header-desktop.svg");
+    }
+    .card
+    {
+        flex-direction: row;
+        padding-top:1rem;
+    }
+    .card__fig
+    {
+        width: 30%;
+        position: static;
+        transform: translateY(0);
+    }
+    .card__top
+    {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card__bottom
+    {
+        width: 65%;
+    }
+}

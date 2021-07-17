@@ -1,0 +1,17 @@
+.filter-ui
+{
+    height: 0;
+    overflow: hidden;
+}
+.top-search
+{
+    position: fixed;
+    top:3rem;
+    left:50%;
+    transform:translateX(-50%);
+}
+#top-search-bar
+{
+    width:clamp(200px,50%,400px);
+    display: block;
+}
