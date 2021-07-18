@@ -16,7 +16,7 @@ function creat_skills(company_object)
     });
 
     let all_skills = `<span class="card__skill">${company_object.role}</span>
-    <span class="card__skill">${level}</span>
+    <span class="card__skill">${company_object.level}</span>
     ${lang_tools}`;
 
     return lang_tools;
@@ -85,3 +85,6 @@ function add_cards(data)
         console.log(card);
     });
 }
+
+
+level
