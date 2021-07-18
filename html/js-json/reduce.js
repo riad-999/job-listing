@@ -21,29 +21,29 @@ console.log(json_array);
 //each element of the retured array is unique 
 // this allow us to put all the languages in one array in none repeatable way
 
-function set_all_types(property_name,typeof_property)
-{
+// function set_all_types(property_name,typeof_property)
+// {
     
-    return json_array.reduce(function(object,acc)
-    {
-        let array = object[property_name];
-        //converting string to array in such case
-        if(typeof_property === String)
-        {
-            array = array.split(" ");
-        }
+//     return json_array.reduce(function(object,acc)
+//     {
+//         let array = object[property_name];
+//         //converting string to array in such case
+//         if(typeof_property === String)
+//         {
+//             array = array.split(" ");
+//         }
         
-        array.forEach(function(item)
-        {
-            if(!acc.contains(item))
-            {
-                acc.add(item);
-            }
-        });
+//         array.forEach(function(item)
+//         {
+//             if(!acc.contains(item))
+//             {
+//                 acc.add(item);
+//             }
+//         });
 
-       return acc;
-    },[]);
-}
+//        return acc;
+//     },[]);
+// }
 
 // const roles = set_all_types("role",typeof("s"));
 // const levels  = set_all_types("level",String);
