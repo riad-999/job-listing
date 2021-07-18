@@ -1,4 +1,4 @@
-let json_array = new array();
+let json_array = new Array();
 fetch("js-json/data.json").then(function(response)
 {
     return response.json();
@@ -45,9 +45,9 @@ function set_all_types(property_name,typeof_property)
     },[]);
 }
 
-const roles = set_all_types("role",String);
-const levels  = set_all_types("level",String);
-const contracts = set_all_types("contract",String);
-const locations = set_all_types("location",String);
-const languages = set_all_types("languages",Array);
-const tools = set_all_types("tools",Array);
+// const roles = set_all_types("role",typeof("s"));
+// const levels  = set_all_types("level",String);
+// const contracts = set_all_types("contract",String);
+// const locations = set_all_types("location",String);
+// const languages = set_all_types("languages",Array);
+// const tools = set_all_types("tools",Array);
