@@ -5,7 +5,7 @@ fetch("js-json/data.json").then(function(response)
 }).then(function(data)
 {
     console.log(data);
-    json_string = JSON.stringify(data);
+    console.log(JSON.stringify(data));
     //because object assigning by reference will cause problems 
 }).catch(function(error)
 {
