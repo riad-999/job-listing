@@ -5,6 +5,7 @@ fetch("js-json/data.json").then(function(response)
 }).then(function(data)
 {
     json_array = data.slice();
+    console.log(json_array);
     //because object assigning by reference will cause problems 
 }).catch(function(error)
 {
