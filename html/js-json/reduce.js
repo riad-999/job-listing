@@ -5,14 +5,14 @@ fetch("js-json/data.json").then(function(response)
 }).then(function(data)
 {
     console.log(data);
-    console.log(JSON.stringify(data));
+    let json_string = JSON.stringify(data);
     //because object assigning by reference will cause problems 
 }).catch(function(error)
 {
     console.log(error.message);
 });
 
-let json_array = JSON.parse(json_string);
+let json_array = JSON.parse(`${json_string}`);
 console.log(json_array);
 //fucntion description:
 //for example if the 1st user object of the array (the json array)
