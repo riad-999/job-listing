@@ -1,17 +1,17 @@
-let json_array=[];
+let json_string;
 fetch("js-json/data.json").then(function(response)
 {
     return response.json();
 }).then(function(data)
 {
-    console.log(data);
-    Object.assign(json_array,data);
+    json_string = JSON.stringify(data);
+    //because object assigning by reference will cause problems 
 }).catch(function(error)
 {
     console.log(error.message);
 });
 console.log(json_array);
-
+let json_array = JSON.parse(json_string);
 //fucntion description:
 //for example if the 1st user object of the array (the json array)
 // khow PHP and the 2nd knows python and 3rd PHP ect...
