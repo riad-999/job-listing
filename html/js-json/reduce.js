@@ -10,8 +10,9 @@ fetch("js-json/data.json").then(function(response)
 {
     console.log(error.message);
 });
-console.log(json_array);
+
 let json_array = JSON.parse(json_string);
+console.log(json_array);
 //fucntion description:
 //for example if the 1st user object of the array (the json array)
 // khow PHP and the 2nd knows python and 3rd PHP ect...
