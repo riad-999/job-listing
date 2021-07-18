@@ -4,6 +4,7 @@ fetch("js-json/data.json").then(function(response)
     return response.json();
 }).then(function(data)
 {
+    console.log(data);
     json_string = JSON.stringify(data);
     //because object assigning by reference will cause problems 
 }).catch(function(error)
