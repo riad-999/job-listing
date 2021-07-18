@@ -5,13 +5,13 @@ fetch("js-json/data.json").then(function(response)
 }).then(function(data)
 {
     Object.assign(json_array,data);
-    console.log(json_array);
+    add_cards(json_array);
     //because object assigning by reference will cause problems 
 }).catch(function(error)
 {
     console.log(error.message);
 });
-console.log(json_array);
+
 // let json_array = JSON.parse(`${json_string}`);
 // console.log(json_array);
 //fucntion description:

@@ -73,12 +73,15 @@ function creat_card_content(company_object)
         ${creat_skills(company_object)}
     </div>`;
 }
-json_array.forEach(function(object)
+function add_cards(data)
 {
-    const card_content = creat_card_content(object);
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.innerHTML = card_content;
-    cards_container.append(card);
-    console.log(card);
-});
+    json_array.forEach(function(object)
+    {
+        const card_content = creat_card_content(object);
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = card_content;
+        cards_container.append(card);
+        console.log(card);
+    });
+}
