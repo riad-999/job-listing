@@ -11,7 +11,7 @@ fetch("js-json/data.json").then(function(response)
 {
     console.log(error.message);
 });
-
+console.log(json_string);
 let json_array = JSON.parse(`${json_string}`);
 console.log(json_array);
 //fucntion description:
