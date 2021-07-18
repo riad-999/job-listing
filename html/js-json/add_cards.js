@@ -1,6 +1,6 @@
 const cards_container = document.
 getElementById("job-listing");
-
+console.log(cards_container);
 function creat_skills(company_object)
 {
     const skills = [].concat(
@@ -80,4 +80,5 @@ json_array.forEach(function(object)
     card.classList.add("card");
     card.innerHTML = card_content;
     cards_container.append(card);
+    console.log(card);
 });
