@@ -7,7 +7,7 @@ const level_list = document
 const location_list = document
 .getElementById("location-checkboxes");
 const language_list = document
-.getElementById("language_checkboxes");
+.getElementById("language-checkboxes");
 const tools_list = document
 .getElementById("tools-checkboxes");
 
@@ -20,15 +20,18 @@ function creat_checkboxe(content)
     <label for="${content}-id">${content}</label>`;
 }
 function fill_list(list_element,array)
-{
-    array.forEach(function(item)
+{   
+    let index;
+    let list_item;
+    for(index=0;index < array.length ;index++)
     {
-        const list_item = document.createElement("li");
+        list_item = document.createElement("li");
         list_item.classList.add("filter-ui__item");
         list_item.classList.add("checkbox");
-        list_item.innerHTML = creat_checkboxe(item);
+        list_item.setAttribute("data-value",array[index]);
+        list_item.innerHTML = creat_checkboxe(array[index]);
         list_element.append(list_item);
-    });
+    }
 }
 fill_list(contract_list,contracts);
 fill_list(role_list,roles);

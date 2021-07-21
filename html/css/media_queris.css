@@ -1,4 +1,4 @@
-@media screen and (min-width:100px)
+@media screen and (min-width:900px)
 {
     header
     {
@@ -8,22 +8,32 @@
     .card
     {
         flex-direction: row;
+        justify-content: space-between;
         padding-top:1rem;
+        align-items: center;
+        width:min(95%,1200px);
+    }
+    .reminder
+    {
+        width:min(95%,1200px);
     }
     .card__fig
     {
         width: 30%;
         position: static;
-        transform: translateY(0);
+        transform :  translateY(0);
     }
     .card__top
     {
+
         display:flex;
         justify-content: space-between;
         align-items: center;
+        padding-bottom: 1rem;
+        width:50%;
     }
     .card__bottom
     {
-        width: 65%;
+        width: 40%;
     }
 }

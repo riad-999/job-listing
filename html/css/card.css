@@ -2,24 +2,25 @@
 {
     display: flex;
     flex-direction: column;
-    padding:1rem;
+    padding:2rem;
     background-color: var(--card-bg);
     border-left:solid 
     var(--light-green) 4px;
     border-radius: 1rem;
     position: relative;
     padding-top:3rem;
+    box-shadow: 0 0 8px 0 rgba(158, 154, 154, 0.6);
+    margin: 4rem auto 0;
+    width:clamp(300px,95%,500px);
 }
-.card span
+.card__top span
 {
     display:inline-block;
     margin:.5rem .5rem 0 0;
 }
-.card__top
+.card__top div:not(.container)
 {
-    border-bottom: solid 2px
-    var(--txt);
-    padding-bottom: 1rem;
+    margin-top: 1rem ;
 }
 .card__name
 {
@@ -53,23 +54,28 @@
 }
 .card__info
 {
-    display: flex;
+    margin-bottom: 1rem;
 }
-.card__info *
-{
-    display:block;
-    padding:.3rem;
-}
+
 .fa-circle
 {
-    font-size: .5rem;
+    font-size: .3rem;
+    display: inline-block;
+    transform: translateY(-.2rem);
 }
 .card__skill
 {
     color:var(--light-green);
     background-color: var(--skill-bg);
+    display:inline-block;
     padding:.5rem;
     border-radius: .2rem;
+    margin-right: 1rem ;
+    margin-bottom: 1rem ; 
+}
+.card__skill:last-child
+{
+    margin-right: 0;
 }
 .card__fig
 {
@@ -83,4 +89,8 @@
 {
     display: block;
     width:100%;
+}
+.no-display
+{
+    display:none !important;
 }

@@ -1,17 +1,68 @@
 .filter-ui
 {
-    height: 0;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: hidden;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.4);
 }
-.top-search
+
+.no-height
 {
-    position: fixed;
-    top:3rem;
-    left:50%;
-    transform:translateX(-50%);
+    height:0;
 }
-#top-search-bar
+.trans
 {
-    width:clamp(200px,50%,400px);
+    transition: height .5s;
+}
+.filter-ui__title
+{
+    color:var(--light-green);
+    margin:1rem 0;
+}
+.filter-ui li
+{
+    margin:1rem;
+}
+.filter-ui :is(label,input)
+{
+    cursor: pointer;
+    color:var(--dark-green);
+}
+.reminder
+{
+    z-index: 3;
+    padding:2rem;
+    background-color: white;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.4);
+    position: relative;
+    margin: auto;
+    width:clamp(300px,95%,500px);
+    bottom:2rem;
+    border-radius: 1rem;
+}
+.clear
+{
     display: block;
+    position: absolute;
+    right: 1rem;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    width:3rem;
+    color:var(--light-green);
+}
+.reminder__item
+{
+    background-color: var(--light-green);
+    color:var(--dark-green);
+    padding:.5rem 0 .5rem .5rem;
+    margin-left:.5rem;
+}
+.fa-times
+{
+    padding:.5rem;
+    cursor: pointer;
 }

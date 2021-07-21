@@ -1,6 +1,7 @@
 const cards_container = document.
-getElementById("job-listing");
+querySelector(".job-listing");
 console.log(cards_container);
+
 function creat_skills(company_object)
 {
     const skills = [].concat(
@@ -21,17 +22,31 @@ function creat_skills(company_object)
 
     return lang_tools;
 }
+
+function creat_card__bottom_content(object)
+{
+    let output = `
+    <span class="card__skill">
+        ${object.role}
+    </span>
+    <span class="card__skill">
+        ${object.level}
+    </span>
+    ` ;
+    output += creat_skills(object);
+    return output;
+}
 function creat_card_content(company_object)
 {
-    let my_new = "";
-    let featured= "";
+    let no_dipslay_featured= "no-display";
+    let no_display_new = "no-display";
     if(company_object.new)
     {
-        my_new = "NEW!";
+        no_display_new = "";
     }
     if(company_object.featured)
     {
-        featured = "featured";
+        no_dipslay_featured = "";
     }
 
     return `
@@ -41,50 +56,50 @@ function creat_card_content(company_object)
             src="${company_object.logo}" 
             alt="company-logo"/>
         </figure>
-        <div>
-            <span class="card__name">
-                ${company_object.company}
-            </span>
-            <span class="card__new">
-                ${my_new}
-            </span>
-            <span class="card__featured">
-                ${featured}
-            </span>
-        </div>
-        <div class="card__position>
-            ${company_object.position}
-        </div>
-        <div class="card__info">
-            <span>
-                ${company_object.postedAt}
-                <i class="fas fa-circle"></i>
-            </span>
-            <span>
-                ${company_object.contract}
-                <i class="fas fa-circle"></i>
-            </span>
-            <span>
-                ${company_object.location}
-            </span>
+        <div class="card__container">
+                <div>
+                    <span class="card__name">
+                        ${company_object.company}
+                    </span>
+                    <span class="card__new ${no_display_new}">
+                        New
+                    </span>
+                    <span class="card__featured ${no_dipslay_featured}">
+                        featured
+                    </span>
+                </div>
+                <div class="card__position">
+                    ${company_object.position}
+                </div>
+                <div class="card__info">
+                    <span>
+                        ${company_object.postedAt}
+                        <i class="fas fa-circle"></i>
+                    </span>
+                    <span>
+                        ${company_object.contract}
+                        <i class="fas fa-circle"></i>
+                    </span>
+                    <span>
+                        ${company_object.location}
+                    </span>
+                </div>
         </div>
     </div>
     <div class="card__bottom">
-        ${creat_skills(company_object)}
+        ${creat_card__bottom_content(company_object)}
     </div>`;
 }
 function add_cards(data)
 {
-    json_array.forEach(function(object)
+    data.forEach(function(object)
     {
         const card_content = creat_card_content(object);
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = card_content;
         cards_container.append(card);
-        console.log(card);
     });
 }
 
 
-level
