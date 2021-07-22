@@ -1,10 +1,166 @@
-let json_array = new Array();
-fetch("js-json/data.json").then(function(response)
-{
-    return response.json();
-}).then(function(data)
-{
-  function set_all_types(property_name)
+let json_array = [{
+    "id": 1,
+    "company": "Photosnap",
+    "logo": "./images/photosnap.svg",
+    "new": true,
+    "featured": true,
+    "position": "Senior Frontend Developer",
+    "role": "Frontend",
+    "level": "Senior",
+    "postedAt": "1d ago",
+    "contract": "Full Time",
+    "location": "USA Only",
+    "languages": ["HTML", "CSS", "JavaScript"],
+    "tools": []
+  },
+  {
+    "id": 2,
+    "company": "Manage",
+    "logo": "./images/manage.svg",
+    "new": true,
+    "featured": true,
+    "position": "Fullstack Developer",
+    "role": "Fullstack",
+    "level": "Midweight",
+    "postedAt": "1d ago",
+    "contract": "Part Time",
+    "location": "Remote",
+    "languages": ["Python"],
+    "tools": ["React"]
+  },
+  {
+    "id": 3,
+    "company": "Account",
+    "logo": "./images/account.svg",
+    "new": true,
+    "featured": false,
+    "position": "Junior Frontend Developer",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "2d ago",
+    "contract": "Part Time",
+    "location": "USA Only",
+    "languages": ["JavaScript"],
+    "tools": ["React", "Sass"]
+  },
+  {
+    "id": 4,
+    "company": "MyHome",
+    "logo": "./images/myhome.svg",
+    "new": false,
+    "featured": false,
+    "position": "Junior Frontend Developer",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "5d ago",
+    "contract": "Full Time",
+    "location": "USA Only",
+    "languages": ["CSS", "JavaScript"],
+    "tools": []
+  },
+  {
+    "id": 5,
+    "company": "Loop Studios",
+    "logo": "./images/loop-studios.svg",
+    "new": false,
+    "featured": false,
+    "position": "Software Engineer",
+    "role": "Fullstack",
+    "level": "Midweight",
+    "postedAt": "1w ago",
+    "contract": "Full Time",
+    "location": "Worldwide",
+    "languages": ["JavaScript"],
+    "tools": ["Ruby", "Sass"]
+  },
+  {
+    "id": 6,
+    "company": "FaceIt",
+    "logo": "./images/faceit.svg",
+    "new": false,
+    "featured": false,
+    "position": "Junior Backend Developer",
+    "role": "Backend",
+    "level": "Junior",
+    "postedAt": "2w ago",
+    "contract": "Full Time",
+    "location": "UK Only",
+    "languages": ["Ruby"],
+    "tools": ["RoR"]
+  },
+  {
+    "id": 7,
+    "company": "Shortly",
+    "logo": "./images/shortly.svg",
+    "new": false,
+    "featured": false,
+    "position": "Junior Developer",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "2w ago",
+    "contract": "Full Time",
+    "location": "Worldwide",
+    "languages": ["HTML", "JavaScript"],
+    "tools": ["Sass"]
+  },
+  {
+    "id": 8,
+    "company": "Insure",
+    "logo": "./images/insure.svg",
+    "new": false,
+    "featured": false,
+    "position": "Junior Frontend Developer",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "2w ago",
+    "contract": "Full Time",
+    "location": "USA Only",
+    "languages": ["JavaScript"],
+    "tools": ["Vue", "Sass"]
+  },
+  {
+    "id": 9,
+    "company": "Eyecam Co.",
+    "logo": "./images/eyecam-co.svg",
+    "new": false,
+    "featured": false,
+    "position": "Full Stack Engineer",
+    "role": "Fullstack",
+    "level": "Midweight",
+    "postedAt": "3w ago",
+    "contract": "Full Time",
+    "location": "Worldwide",
+    "languages": ["JavaScript", "Python"],
+    "tools": ["Django"]
+  },
+  {
+    "id": 10,
+    "company": "The Air Filter Company",
+    "logo": "./images/the-air-filter-company.svg",
+    "new": false,
+    "featured": false,
+    "position": "Front-end Dev",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "1mo ago",
+    "contract": "Part Time",
+    "location": "Worldwide",
+    "languages": ["JavaScript"],
+    "tools": ["React", "Sass"]
+  }
+];
+add_cards(json_array);
+// add_cards(json_array);
+// let json = JSON.parse(`${json}`);
+// console.log(json);
+//fucntion description:
+//for example if the 1st user object of the (the json)
+// khow PHP and the 2nd knows python and 3rd PHP ect...
+//so the return of the function id ["PHP","python",...]
+//each element of the retured is unique 
+// this allow us to put all the languages in one in none repeatable way
+
+function set_all_types(property_name)
 {
     
     let ret = json_array.reduce(function(acc,object)
@@ -26,136 +182,6 @@ fetch("js-json/data.json").then(function(response)
    
     return ret;
 }
-
-  const roles = set_all_types("role");
-  const levels  = set_all_types("level");
-  const contracts = set_all_types("contract");
-  const locations = set_all_types("location");
-  const languages = set_all_types("languages");
-  const tools = set_all_types("tools");
-
-  Object.assign(json_array,data);
-  add_cards(json_array);
-  //checkboxes
-  const contract_list = document
-  .getElementById("contract-checkboxes");
-  const role_list = document.
-  getElementById("role-checkboxes");
-  const level_list = document
-  .getElementById("level-checkboxes");
-  const location_list = document
-  .getElementById("location-checkboxes");
-  const language_list = document
-  .getElementById("language-checkboxes");
-  const tools_list = document
-  .getElementById("tools-checkboxes");
-
-  fill_list(contract_list,contracts);
-  fill_list(role_list,roles);
-  fill_list(level_list,levels);
-  fill_list(location_list,locations);
-  fill_list(language_list,languages);
-  fill_list(tools_list,tools);
-  // event
-  const filter_btn = 
-  document.getElementById("filter-btn");
-  const filter_ui = document.querySelector(".filter-ui");
-  const checkboxes = document.querySelectorAll(".checkbox");
-  filter_ui.classList.add("no-height");
-  const reminder = document.querySelector(".reminder");
-  let checkbox_array = [];
-
-  checkboxes.forEach(item =>
-{
-    item.addEventListener("click",e=>
-    {
-        {
-            const property_name = e.currentTarget.
-            closest(".filter-ui__list").dataset.property_name;
-            const value = e.currentTarget.querySelector("label")
-            .innerHTML;
-            const obj = new Checkbox(property_name,value);
-
-            if(e.currentTarget.querySelector("input").checked)
-            {
-                checkbox_array.push(obj);
-            }
-            else
-            {
-                checkbox_array = checkbox_array.filter(item=>
-                {
-                    return !( item.property_name == property_name 
-                        && item.value == value);
-                });
-            }
-            add_cards(filter_cards(checkbox_array));
-            update_reminder();
-        }
-    });
-});
-reminder.addEventListener("click",e=>
-{
-    const target = e.target;
-    if(target.classList.contains("fa-times"))
-    {
-        const property_name = target.parentElement.
-        getAttribute("data-property_name");
-        const value = target.parentElement.
-        getAttribute("data-value");
-        console.log(value);
-        console.log(property_name);
-        const list = document.
-        querySelector(`ul[data-property_name="${property_name}"]`);
-        console.log(list);
-        const checkbox = list.
-        querySelector(`li[data-value="${value}"`).querySelector("input");
-        console.log(checkbox);
-        checkbox.click();
-        target.parentElement.remove();
-    }
-});
-  const clear_btn = document.querySelector(".clear");
-  clear_btn.addEventListener("click",e=>
-{
-    checkbox_array = [];
-    add_cards(filter_cards(checkbox_array));
-    clear_btn.parentElement.querySelectorAll("span")
-    .forEach(item=>item.remove());
-    document.querySelectorAll(`input[type="checkbox"]`)
-    .forEach(item=>item.checked = false);
-});
- // search 
-let search_bar = document.
-getElementById("top-search-bar");
-let search_form = document.querySelector(".top-search");
-search_form.addEventListener("submit",e=>
-{
-    e.preventDefault();
-});
-
-search_bar.addEventListener("change",(e)=>
-{   
-    
-    let value = e.currentTarget.value;
-    value.toLowerCase();
-    add_cards(filter_cards(checkbox_array));
-    if(value.length != 0)
-    {
-        const cards = document.querySelectorAll(".card");
-        cards.forEach(card=>
-        {
-            if(!card.textContent.includes(value))
-            {
-                card.remove();
-            }
-        });
-    }
-});
-
-}).catch(function(error)
-{
-    console.log(error.message);
-});
 
 const roles = set_all_types("role");
 const levels  = set_all_types("level");

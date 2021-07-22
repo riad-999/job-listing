@@ -1,3 +1,5 @@
+const cards_container = document.
+querySelector(".job-listing");
 
 function creat_skills(company_object)
 {
