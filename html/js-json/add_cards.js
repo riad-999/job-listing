@@ -1,6 +1,3 @@
-const cards_container = document.
-querySelector(".job-listing");
-console.log(cards_container);
 
 function creat_skills(company_object)
 {
